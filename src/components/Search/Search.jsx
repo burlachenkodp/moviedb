@@ -1,21 +1,19 @@
 import React from "react";
+import classes from "./Search.module.css";
 
-export const Search = ({ handleSubmit, handleChange }) => {
+
+export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
   return (
-    <div className="container">
-      <div className="row">
-        <section className="row-item">
-          <form action="" onSubmit={handleSubmit}>
-            <div className="input-field">
-              <input
-                type="text"
-                placeholder="TYPE MOVIE"
-                onChange={handleChange}
-              />
-            </div>
-          </form>
-        </section>
-      </div>
-    </div>
+    <header>
+    <form onSubmit={handleOnSubmit}>
+      <input
+        type="search"
+        placeholed="search"
+        className={classes["search-bar"]}
+        value={searchText}
+        onChange={handleOnChange}
+      />
+    </form>
+  </header>
   );
 };
