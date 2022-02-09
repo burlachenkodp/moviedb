@@ -1,9 +1,21 @@
 import React from "react";
+import { Movie } from "../Movie/Movie";
+import { Search } from "../Search/Search";
 
-export const MovieList = () => {
+import classes from "./MovieList.module.css";
+
+export const MovieList = ({ movies, handleOnSubmit, handleOnChange, searchText}) => {
   return (
     <div>
-      <h2>MOVIE LIST</h2>
+      <Search
+        handleOnSubmit={handleOnSubmit}
+        handleOnChange={handleOnChange}
+        searchText={searchText}
+      />
+      <div className={classes["movie-container"]}>
+        {movies.length > 0 &&
+          movies.map((movie) => <Movie {...movie} key={movie.id}></Movie>)}
+      </div>
     </div>
   );
 };

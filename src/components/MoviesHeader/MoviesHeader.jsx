@@ -1,16 +1,15 @@
 import React from "react";
 import classes from "./MoviesHeader.module.css";
+import { Menu } from "../Menu/Menu";
 
 
 
 export const MoviesHeader = () => {
   return (
     <header className={classes["main-header"]}>
-      <nav className={classes["menu"]}>
-        <ul>
-          <h2>HEADER</h2>
-      </ul>
-      </nav>
+<h2>logo</h2>
+<Menu></Menu>
+{/*<Login> */}
     </header>
   );
 };

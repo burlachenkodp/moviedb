@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { MoviesHeader } from "./components/MoviesHeader/MoviesHeader";
+import { Blog } from "./components/Blog/Blog";
+import { MovieList } from "./components/MovieList/MovieList";
 import { MoviesFooter } from "./components/MoviesFooter/MoviesFooter";
-import { Search } from "./components/Search/Search";
-import { Movie } from "./components/Movie/Movie";
+import {
+  ROUTE_BLOG,
+  ROUTE_ERROR,
+  ROUTE_MAIN,
+} from "./utils/constanst";
 
 const APIKEY = "9eff04d46f577f54aa4be3150957e4b5";
 const FEATURED = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${APIKEY}&page=1`;
@@ -38,14 +44,23 @@ function App() {
   return (
     <div className="App">
       <MoviesHeader />
-      <Search 
-      handleOnSubmit = {handleOnSubmit} handleOnChange = {handleOnChange}  searchText = {searchText}
+      
+<Routes>
+        <Route
+          path={ROUTE_MAIN}
+          element={
+            <MovieList
+        movies={movies}
+        handleOnSubmit={handleOnSubmit}
+        handleOnChange={handleOnChange}
+        searchText={searchText}
       />
+          }
+        />
+        <Route path={ROUTE_BLOG} element={<Blog />} />
+        <Route path={ROUTE_ERROR} element={<h2>404 ERROR!!!</h2>} />
+      </Routes>
 
-      <div className="movie-container">
-        {movies.length > 0 &&
-          movies.map((movie) => <Movie {...movie} key={movie.id}></Movie>)}
-      </div>
       <MoviesFooter />
     </div>
   );
