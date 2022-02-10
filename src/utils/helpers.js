@@ -6,7 +6,7 @@ export const sortList = (field, list) => {
     case "string":
       return [...list].sort((a, b) => a[field].localeCompare(b[field]));
     case "number":
-      return [...list].sort((a, b) => a[field] - b[field]);
+      return [...list].sort((a, b) => b[field] - a[field]);
     default:
       return list;
   }

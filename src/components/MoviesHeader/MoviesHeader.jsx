@@ -4,10 +4,12 @@ import { Menu } from "../Menu/Menu";
 
 
 
-export const MoviesHeader = () => {
+
+export const MoviesHeader = ({setShowModal}) => {
+
   return (
     <header className={classes["main-header"]}>
-<h2>logo</h2>
+<h2 >logo</h2>
 <Menu></Menu>
 {/*<Login> */}
     </header>
