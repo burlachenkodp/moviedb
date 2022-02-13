@@ -4,8 +4,8 @@ import "./App.css";
 import { MoviesHeader } from "./components/MoviesHeader/MoviesHeader";
 import { Blog } from "./components/Blog/Blog";
 import { Modal } from "./components/Modal/Modal";
+import { UserForm } from "./components/UserForm/UserForm";
 import { MovieCard } from "./components/MovieCard/MovieCard";
-
 import { MovieList } from "./components/MovieList/MovieList";
 import { MoviesFooter } from "./components/MoviesFooter/MoviesFooter";
 import {
@@ -16,27 +16,26 @@ import {
   OPEN_FORM,
   OPEN_LOADER,
 } from "./utils/constanst";
-
 const APIKEY = "9eff04d46f577f54aa4be3150957e4b5";
-const POPULAR = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=1`;
+const POPULAR = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=`;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=`;
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [isShowModal, setShowModal] = useState(CLOSE_MODAL);
-
+  const [page, setPage] = useState(1);
 
   const getMovies = (API) => {
     fetch(API)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
-        //console.log(data.results);
+        console.log(data.results);
       });
   };
   useEffect(() => {
-    getMovies(POPULAR);
-  }, []);
+    getMovies(POPULAR + page);
+  }, [page]);
 
   const handleOnChange = (e) => {
     setSearchText(e.target.value);
@@ -45,42 +44,40 @@ function App() {
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (searchText) {
-      getMovies(SEARCH_API + searchText);
+      getMovies(SEARCH_API + searchText + `&page=${page}`);
     }
     setSearchText("");
-
   };
+
   const closeModal = () => setShowModal(0);
 
   return (
     <div className="App">
-      <MoviesHeader         
-    />
-      
-<Routes>
+      <MoviesHeader setShowModal={setShowModal} />
+
+      <Routes>
         <Route
           path={ROUTE_MAIN}
           element={
             <MovieList
-        movies={movies}
-        handleOnSubmit={handleOnSubmit}
-        handleOnChange={handleOnChange}
-        searchText={searchText}
-        setShowModal={setShowModal}
-      />
+              movies={movies}
+              handleOnSubmit={handleOnSubmit}
+              handleOnChange={handleOnChange}
+              searchText={searchText}
+              page={page}
+              setPage={setPage}
+            />
           }
         />
         <Route path={ROUTE_BLOG} element={<Blog />} />
         <Route path={ROUTE_ERROR} element={<h2>404 ERROR!!!</h2>} />
+        <Route path={"/user/:id"} element={<MovieCard />} />
       </Routes>
-      <Modal show={isShowModal} close={closeModal}>
-      {isShowModal === OPEN_FORM && (
-          <MovieCard movies={movies}/>
-        )}
-        {isShowModal === OPEN_LOADER && <h1>LOADING</h1>}
 
-         
-       
+      <Modal show={isShowModal} close={closeModal}>
+        movies={movies}
+        {isShowModal === OPEN_FORM && <UserForm />}
+        {isShowModal === OPEN_LOADER && <h1>LOADING</h1>}
       </Modal>
       <MoviesFooter />
     </div>

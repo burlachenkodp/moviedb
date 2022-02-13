@@ -10,6 +10,7 @@ const FILTER_PROP = [
   { value: "empty", label: "language" },
   { value: "en", label: "ENGLISH" },
   { value: "ko", label: "KOREAN" },
+  { value: "es", label: "SPANISH" },
 ];
 
 export const Filter = ({ typeSort, setTypeSort, lang, setLang }) => {

@@ -6,7 +6,7 @@
   right: 0;
   bottom: 0;
   place-content: center;
-  background-color: rgba(107, 100, 100, 0.22);
+  background-color: transparent;
 }
 .hide {
   display: none;
