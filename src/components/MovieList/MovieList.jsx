@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Movie } from "../Movie/Movie";
-import { Search } from "../Search/Search";
-import { Filter } from "../Filter/Filter";
+import React, { useEffect, useState } from "react";
+import { Movie } from "../MovieItem/Movie";
 import { sortList } from "../../utils/helpers";
+import { ControlPanel } from "../ControlPanel/ControlPanel";
 
 import classes from "./MovieList.module.css";
 
@@ -19,6 +18,10 @@ export const MovieList = ({
   const [lang, setLang] = useState("language");
 
   const sortedArray = sortList(typeSort, movies);
+  useEffect(()=> {
+
+    
+  }, [lang]);
   const MoviesArray =
     lang === "language"
       ? sortedArray
@@ -37,26 +40,24 @@ export const MovieList = ({
   };
 
   return (
-    <div>
-      <Search
+    <main>
+      <ControlPanel
         handleOnSubmit={handleOnSubmit}
         handleOnChange={handleOnChange}
         searchText={searchText}
-      />
-
-      <Filter
         typeSort={typeSort}
         setTypeSort={setTypeSort}
         lang={lang}
         setLang={setLang}
-      ></Filter>
-      <div>
+      ></ControlPanel>
+
+      <section>
         <div>
           <button onClick={() => setPage(prevPage)}>prev</button>
           <span>{page}</span>
           <button onClick={() => setPage(nextPage)}>next</button>
         </div>
-        <div className={classes["movie-container"]}>
+        <section className={classes["movie-container"]}>
           {" "}
           {MoviesArray?.length ? (
             MoviesArray.map((movie) => (
@@ -67,10 +68,10 @@ export const MovieList = ({
               ></Movie>
             ))
           ) : (
-            <h1>EMPTY LIST</h1>
+            <h1>LOOK IN NEXT PAGE</h1>
           )}
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </main>
   );
 };

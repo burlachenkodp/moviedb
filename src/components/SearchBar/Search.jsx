@@ -13,6 +13,7 @@ export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
         value={searchText}
         onChange={handleOnChange}
       />
+      <button>SEARCH</button>
     </form>
   </header>
   );

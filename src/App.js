@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
+import "./App.scss";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import { MoviesHeader } from "./components/MoviesHeader/MoviesHeader";
+import { MoviesHeader } from "./components/MainHeader/MoviesHeader";
 import { Blog } from "./components/Blog/Blog";
 import { Modal } from "./components/Modal/Modal";
 import { UserForm } from "./components/UserForm/UserForm";
-import { MovieCard } from "./components/MovieCard/MovieCard";
+import { MovieCard } from "./components/MoviePage/MoviePage";
 import { MovieList } from "./components/MovieList/MovieList";
-import { MoviesFooter } from "./components/MoviesFooter/MoviesFooter";
+import { MoviesFooter } from "./components/MainFooter/MoviesFooter";
 import {
   ROUTE_BLOG,
   ROUTE_ERROR,
@@ -15,10 +15,10 @@ import {
   CLOSE_MODAL,
   OPEN_FORM,
   OPEN_LOADER,
+  POPULAR,
+  SEARCH_API,
 } from "./utils/constanst";
-const APIKEY = "9eff04d46f577f54aa4be3150957e4b5";
-const POPULAR = `https://api.themoviedb.org/3/movie/popular?api_key=${APIKEY}&language=en-US&page=`;
-const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${APIKEY}&query=`;
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -54,7 +54,6 @@ function App() {
   return (
     <div className="App">
       <MoviesHeader setShowModal={setShowModal} />
-
       <Routes>
         <Route
           path={ROUTE_MAIN}
