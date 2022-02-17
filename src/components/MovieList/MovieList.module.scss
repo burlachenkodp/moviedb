@@ -1,0 +1,29 @@
+main {
+  background-color: #d3e3fc;
+
+  .main-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+
+  }
+  .movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 40px;
+        font-weight: 700;
+    }
+    button {
+        min-width: 100px;
+    }
+  }
+}

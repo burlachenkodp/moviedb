@@ -1,0 +1,43 @@
+.card {
+  width: 240px;
+  background-color: #77a6f7;
+  margin: 1rem;
+  overflow: hidden;
+  border-radius: 3px;
+
+  &__header {
+    min-height: 300px;
+
+    img {
+      max-width: 240px;
+      min-height: 300px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  &__mark {
+    background-color: #d3e3fc;
+    border-radius: 50%;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+    color: #006359;
+    &:hover {
+      background-color: #006359;
+      color: #d3e3fc;
+    }
+  }
+  &__button {
+    display: block;
+    background-color: #d3e3fc;
+
+    color: #000;
+  }
+}

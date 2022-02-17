@@ -1,22 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./MoviesFooter.module.scss";
-import iconSet from "../../icomoon/selection.json";
-import IcomoonReact, { iconList } from "icomoon-react";
-
-
+import { ImGithub, ImLinkedin, ImTelegram } from "react-icons/im";
 
 export const MoviesFooter = () => {
-
-  const [color, setColor] = useState('red');
-
-
-  function changeBackground(e) {
-    setColor("green")
-  }
-  function changeColor(e) {
-    setColor("red")
-  }
-
   return (
     <footer className={classes["footer"]}>
       <div className={classes["footer__container"]}>
@@ -27,36 +13,17 @@ export const MoviesFooter = () => {
         <div className={classes["socials"]}>
           <div>
             <a href="https://github.com" className={classes["socials__link"]}>
-              <IcomoonReact
-                iconSet={iconSet}
-                color="#444"
-                size={40}
-                icon="telegram"
-                
-              />
+              <ImLinkedin size={40}/>
             </a>
           </div>
           <div>
             <a href="https://github.com" className={classes["socials__link"]}>
-              <IcomoonReact
-                iconSet={iconSet}
-                color= {color}
-                size={40}
-                icon="github"
-                onMouseOver={changeBackground}
-                onMouseOut={changeColor}
-
-              />
+              <ImGithub size={40}/>
             </a>
           </div>
           <div>
             <a href="https://github.com" className={classes["socials__link"]}>
-              <IcomoonReact
-                iconSet={iconSet}
-                color="#444"
-                size={40}
-                icon="linkedin"
-              />
+              <ImTelegram size={40} />
             </a>
           </div>
         </div>

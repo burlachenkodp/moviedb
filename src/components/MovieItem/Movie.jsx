@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { EMPTY_IMAGE, IMG_API } from "../../utils/constanst";
 
-import classes from "./Movie.module.css";
+import classes from "./Movie.module.scss";
 
 export const Movie = ({
   title,
@@ -11,8 +11,8 @@ export const Movie = ({
   id,
 }) => {
   return (
-    <article className={classes["movie-card"]}>
-      <div className={classes["movie-header"]}>
+    <article className={classes["card"]}>
+      <div className={classes["card__header"]}>
         <img
           src={
             poster_path
@@ -21,15 +21,18 @@ export const Movie = ({
           }
           alt={title}
         ></img>
-        <div className={classes["movie-info"]}>
+          </div>
+        <div className={classes["card__info"]}>
           <h3>{title}</h3>
-          <span className={classes["mark"]}>{vote_average}</span>
+          <h3 className={classes["card__mark"]}>{vote_average}</h3>
+
         </div>
         <Link to={`/user/${id}`}>
           {" "}
-          <button>more info</button>
+          <button className={classes["card__button"]}>MORE INFO</button>
         </Link>
-      </div>
+       
+    
     </article>
   );
 };

@@ -3,7 +3,7 @@ import { Movie } from "../MovieItem/Movie";
 import { sortList } from "../../utils/helpers";
 import { ControlPanel } from "../ControlPanel/ControlPanel";
 
-import classes from "./MovieList.module.css";
+import classes from "./MovieList.module.scss";
 
 export const MovieList = ({
   movies,
@@ -18,10 +18,7 @@ export const MovieList = ({
   const [lang, setLang] = useState("language");
 
   const sortedArray = sortList(typeSort, movies);
-  useEffect(()=> {
 
-    
-  }, [lang]);
   const MoviesArray =
     lang === "language"
       ? sortedArray
@@ -51,12 +48,7 @@ export const MovieList = ({
         setLang={setLang}
       ></ControlPanel>
 
-      <section>
-        <div>
-          <button onClick={() => setPage(prevPage)}>prev</button>
-          <span>{page}</span>
-          <button onClick={() => setPage(nextPage)}>next</button>
-        </div>
+      <section className={classes["main-container"]}>
         <section className={classes["movie-container"]}>
           {" "}
           {MoviesArray?.length ? (
@@ -71,6 +63,19 @@ export const MovieList = ({
             <h1>LOOK IN NEXT PAGE</h1>
           )}
         </section>
+        <div className={classes["pagination"]}>
+          <div>
+            {" "}
+            <button onClick={() => setPage(prevPage)}>PREV</button>
+          </div>
+          <div>
+            <span>{page}</span>
+          </div>
+          <div>
+            {" "}
+            <button onClick={() => setPage(nextPage)}>NEXT</button>
+          </div>
+        </div>
       </section>
     </main>
   );

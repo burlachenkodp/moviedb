@@ -18,7 +18,7 @@ export const MovieCard = () => {
   }, [id]);
   console.log(userInfo);
   return (
-    <div>
+    <main>
       {`got this id: ${id},`}
       {userInfo ? (
         <div>
@@ -36,6 +36,6 @@ export const MovieCard = () => {
       ) : (
         <p>LOADING...</p>
       )}
-    </div>
+    </main>
   );
 };

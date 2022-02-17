@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./Search.module.css";
+import classes from "./Search.module.scss";
 
 
 export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
   return (
-    <header>
+    <section>
     <form onSubmit={handleOnSubmit}>
       <input
         type="search"
@@ -15,6 +15,6 @@ export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
       />
       <button>SEARCH</button>
     </form>
-  </header>
+  </section>
   );
 };
