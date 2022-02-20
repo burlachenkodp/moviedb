@@ -32,11 +32,13 @@ export const MovieList = ({
     setPage(page + 1);
   };
   const prevPage = (page) => {
-    console.log(page);
     if (page > 1) {
       setPage(page - 1);
     } else setPage(page);
   };
+
+ 
+
 
   return (
     <main>
@@ -62,13 +64,13 @@ export const MovieList = ({
               ></Movie>
             ))
           ) : (
-            <h1>LOOK IN NEXT PAGE</h1>
+           <div><h1>Go to the next page</h1></div> 
           )}
         </section>
         <div className={classes["pagination"]}>
           <div>
             {" "}
-            <button onClick={() => setPage(prevPage)}>PREV</button>
+            <button onClick={() => setPage(prevPage)}  disabled ={(page === 1)}>PREV</button>
           </div>
           <div>
             <span>{page}</span>
@@ -82,3 +84,4 @@ export const MovieList = ({
     </main>
   );
 };
+

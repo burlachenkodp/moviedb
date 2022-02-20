@@ -71,12 +71,14 @@ export const Menu = () => {
         }
         .navigation a:active {
           background-color: #00887a;
+          color: #FFF;
         }
         .usual-link {
           background-color: #fff;
         }
         .active-link {
           background-color: #00887a;
+       
         }
     
 

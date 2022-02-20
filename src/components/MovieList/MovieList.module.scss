@@ -42,6 +42,10 @@ main {
 
         background-color: #071347;
       }
+      &:disabled {
+        background-color: #c9cee4;
+      }
     }
+  
   }
 }
