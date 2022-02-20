@@ -9,7 +9,7 @@ const SORT_PROP = [
 ];
 
 const FILTER_PROP = [
-  { value: "empty", label: "Country" },
+  { value: "language", label: "Country" },
   { value: "en", label: "English" },
   { value: "ko", label: "Korean" },
   { value: "es", label: "Spanish" },

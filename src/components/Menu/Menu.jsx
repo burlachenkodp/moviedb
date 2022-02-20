@@ -13,11 +13,7 @@ const MENU_ITEMS = [
 export const Menu = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-
-  const getClass =
-  hamburgerOpen === true
-    ? 'SHOWMENU'
-    : 'HIDEMENU';
+  const getClass = hamburgerOpen === true ? "SHOWMENU" : "HIDEMENU";
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
@@ -31,7 +27,8 @@ export const Menu = () => {
               <NavLink
                 to={item.path}
                 className={(isActive) =>
-                  isActive ? classes["active-link"] : ""
+                  !isActive ? 
+                  "active-link" : "usual-link"
                 }
               >
                 {item.label}
@@ -39,13 +36,16 @@ export const Menu = () => {
             </li>
           ))}
         </ul>
-        <div className="hamburger-wrap" onClick={toggleHamburger}>
+        <div className="hamburger" onClick={toggleHamburger}>
           <Hamburger isOpen={hamburgerOpen} />
         </div>
       </div>
-      <style jsx>{`
+      <style jsx="true">{`
      
-
+     .navigation {
+      width: 100%;
+      height: 50px;
+    }
         .navigation ul {
           display: flex;
           flex-wrap: wrap;
@@ -63,7 +63,6 @@ export const Menu = () => {
           padding: 10px 20px;
           margin: 10px 10px;
           border-radius: 4px;
-          background-color: #fff;
 
         
         }
@@ -73,9 +72,13 @@ export const Menu = () => {
         .navigation a:active {
           background-color: #00887a;
         }
+        .usual-link {
+          background-color: #fff;
+        }
         .active-link {
           background-color: #00887a;
         }
+    
 
         .hamburger {
           display: none;
@@ -116,10 +119,7 @@ export const Menu = () => {
             position: fixed;
           }
         }
-      `}</style> 
-      
-      </div>
-    
+      `}</style>
+    </div>
   );
 };
-

@@ -30,7 +30,6 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.results);
-        console.log(data.results);
       });
   };
   useEffect(() => {

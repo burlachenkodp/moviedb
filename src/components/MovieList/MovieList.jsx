@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { Movie } from "../MovieItem/Movie";
 import { sortList } from "../../utils/helpers";
 import { ControlPanel } from "../ControlPanel/ControlPanel";
@@ -17,14 +17,16 @@ export const MovieList = ({
   const [typeSort, setTypeSort] = useState("any");
   const [lang, setLang] = useState("language");
 
-  const sortedArray = sortList(typeSort, movies);
+  const sortedArray = useMemo(() => {
+    if (lang === "language") return movies;
 
-  const MoviesArray =
-    lang === "language"
-      ? sortedArray
-      : sortedArray.filter((item) =>
-          item.original_language.toLowerCase().includes(lang)
-        );
+    const temp = movies.filter((item) =>
+      item.original_language.toLowerCase().includes(lang)
+    );
+    return temp;
+  }, [lang, movies]);
+
+  const MoviesArray = sortList(typeSort, sortedArray);
 
   const nextPage = (page) => {
     setPage(page + 1);
