@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { EMPTY_IMAGE, IMG_API } from "../../utils/constanst";
+import {  IMG_API } from "../../utils/constanst";
+import popcorn from "../../pop-corn.jpg";
+
 
 import classes from "./Movie.module.scss";
 
@@ -9,7 +11,7 @@ export const Movie = ({ title, poster_path, vote_average, id }) => {
     <article className={classes["card"]}>
       <div className={classes["card__header"]}>
         <img
-          src={poster_path ? IMG_API + poster_path : EMPTY_IMAGE}
+          src={poster_path ? IMG_API + poster_path : popcorn}
           alt={title}
         ></img>
       </div>

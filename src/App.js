@@ -18,7 +18,6 @@ import {
   POPULAR,
   SEARCH_API,
 } from "./utils/constanst";
-import Nav from "./components/Nav/Nav";
 
 function App() {
   const [movies, setMovies] = useState([]);

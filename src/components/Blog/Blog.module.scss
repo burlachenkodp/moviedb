@@ -1,0 +1,38 @@
+.blog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  &__title {
+    text-align: center;
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+  }
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: #000;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    @media (max-width: 767px) {
+      margin: 0;
+      padding: 10px 50px;
+      width: 100%;
+    }
+    &:hover {
+      background-color: #00887a;
+      color: #fff;
+    }
+     &:active {
+      background-color:#042b27;;
+     
+    } 
+  }
+
+}

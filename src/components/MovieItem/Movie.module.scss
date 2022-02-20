@@ -7,7 +7,7 @@
   flex-direction: column;
   margin: 10px 0;
   color: #fff;
-  @media (max-width: 767px) {
+  @media (max-width: 1040px) {
     margin-left: 5px;
     margin-right: 5px;
   }
@@ -26,36 +26,41 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem;
+    padding: 8px;
     flex: 1 0 auto;
   }
-
-  &__title-wrap {
-    flex-grow: 1;
-    flex-shrink: 1;
+  &__title {
+    font-size: 14px;
+    color: #004b43;
+    &__-wrap {
+      flex-grow: 1;
+      flex-shrink: 1;
+    }
   }
 
   &__mark-wrap {
     display: flex;
-    justify-content: center; /*Центрирование по горизонтали*/
+    justify-content: center;
     align-items: center;
     flex-grow: 0;
     flex-shrink: 0;
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
     text-align: center;
     border-radius: 50%;
-    background-color: #eff301;
+    border: 2px solid #004b43;
+    background-color: #77a6f7;
+    color:#004b43;
 
     &:hover {
-      background-color: #006359;
-      color: #d3e3fc;
+      background-color: #00887a;
+      color: #fff;
     }
   }
 
   &__button {
     display: block;
-    margin: 5px auto;
+    margin: 0px auto 15px;
     background-color: #354ebf;
     color: #fff;
     flex: 0 0 auto;

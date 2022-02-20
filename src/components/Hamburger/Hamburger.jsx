@@ -1,13 +1,21 @@
+import classes from "./Hamburger.scss";
+
 export default function Hamburger({ isOpen }){
+
+    const burgerlass =
+    isOpen === true
+      ? 'burger__SHOWBURGER'
+      : 'burger__HIDBURGER';
+
     return(
         <>
             <div className="hamburger">
                 <div className="burger burger1" />
                 <div className="burger burger2" />
-                <div className="burger burger3" />
+                <div className="burger burger3"/>
             </div>
 
-            <style jsx>{`
+         <style jsx>{`
                 .hamburger{
                     width: 2rem;
                     height: 2rem;
@@ -17,11 +25,11 @@ export default function Hamburger({ isOpen }){
                     z-index: 10;
                 }
 
-                .burger{
+                .burger {
                     width: 25px;
                     height: 0.25rem;
                     border-radius: 10px;
-                    background-color: black;
+                    background-color: #fff;
                     transform-origin: 1px;
                     transition: all 0.3s linear;
                 }
@@ -30,6 +38,10 @@ export default function Hamburger({ isOpen }){
                     transform: ${ isOpen ? 'rotate(45deg)' : 'rotate(0)'};
                     margin-bottom: 4px;
                 }
+              
+
+
+
                 .burger2{
                     transform: ${ isOpen ? 'translateX(-100%)' : 'translateX(0)'};
                     opacity: ${ isOpen ? 0 : 1};
@@ -41,7 +53,7 @@ export default function Hamburger({ isOpen }){
                 }
 
                 
-            `}</style>
+            `}</style>  
         </>
     )
 }

@@ -11,7 +11,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @media (max-width: 767px) {
+    @media (max-width: 1040px) {
       justify-content: center;  
          }
   }
@@ -21,17 +21,18 @@ main {
     justify-content: center;
     align-items: center;
     span {
-      font-size: 40px;
+      font-size: 28px;
       font-weight: 700;
       color: #071347;
     }
     button {
       min-width: 100px;
       padding: 8px;
+      
       border-radius: 4px;
       background-color: #354ebf;
       color: white;
-      margin: 10px;
+      margin: 10px 16px;
 
       &:hover {
         background-color: #21327c;
