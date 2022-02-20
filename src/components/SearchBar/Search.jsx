@@ -4,12 +4,12 @@ import classes from "./Search.module.scss";
 
 export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
   return (
-    <section>
+    <section className={classes["search-block"]}>
     <form onSubmit={handleOnSubmit}>
       <input
         type="search"
         placeholed="search"
-        className={classes["search-bar"]}
+        className={classes["search-text"]}
         value={searchText}
         onChange={handleOnChange}
       />

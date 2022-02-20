@@ -1,17 +1,24 @@
 .card {
   width: 240px;
   background-color: #77a6f7;
-  margin: 1rem;
   overflow: hidden;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  color: #fff;
+  @media (max-width: 767px) {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
   &__header {
     min-height: 300px;
+    flex: 0 0 auto;
 
     img {
-      max-width: 240px;
-      min-height: 300px;
-      object-fit: cover;
+      width: 240px;
+      height: 350px;
     }
   }
 
@@ -20,24 +27,49 @@
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem;
+    flex: 1 0 auto;
   }
-  &__mark {
-    background-color: #d3e3fc;
-    border-radius: 50%;
-    font-weight: bold;
+
+  &__title-wrap {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__mark-wrap {
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    vertical-align: middle;
-    padding: 0.5rem;
-    color: #006359;
+    border-radius: 50%;
+    background-color: #eff301;
+
     &:hover {
       background-color: #006359;
       color: #d3e3fc;
     }
   }
+
   &__button {
     display: block;
-    background-color: #d3e3fc;
+    margin: 5px auto;
+    background-color: #354ebf;
+    color: #fff;
+    flex: 0 0 auto;
+    min-width: 100px;
+    padding: 8px;
+    border-radius: 4px;
+    &:hover {
+      background-color: #21327c;
+      color: #fff;
+    }
+    &:active {
+      color: white;
 
-    color: #000;
+      background-color: #071347;
+    }
   }
 }

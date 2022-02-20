@@ -1,6 +1,19 @@
-.header {
 
-  background-color: #77A6F7;
+.header {
+  background-color: #354ebf;
+  min-height: 82px;
+  width: 100%;
+  position: fixed;
+  top: 0; 
+
+ 
+  z-index: 1000;
+  &__logo {
+    order: 1;
+    @media (max-width: 767px) {
+      order: 3;
+    }
+  }
   &__container {
     display: flex;
     justify-content: space-between;
@@ -9,36 +22,30 @@
     max-width: 1140px;
     padding: 0 15px;
     margin: 0 auto;
+
     @media (max-width: 767px) {
-      justify-content: start;
+      padding: 0;
     }
+  }
+  &__button {
+    order: 5;
+    color: #000;
+    padding: 10px 20px;
+    margin: 10px 15px 10px 10px;
+    border-radius: 4px;
+    background-color: #fff;
 
-    nav {
-      order: 2;
-      @media (max-width: 767px) {
-        order: 5;
-        position: absolute;
-        top: 82px;
-        right: 0;
-        z-index: 100;
-        background-color: yellow;
-      }
+    &:hover {
+      background-color: #d3e3fc;
     }
-
-    button {
-      order: 3;
-      color: #000;
-      padding: 10px 20px;
-      margin: 10px 10px;
-      border-radius: 10px;
-      background-color: #fff;
-     
-      &:hover {
-        background-color: #D3E3FC;
-      }
-      &:active {
-        background-color: #00887a;
-      }
+    &:active {
+      background-color: #00887a;
+    }
+  }
+  &__nav {
+    order: 3;
+    @media (max-width: 767px) {
+      order: 1;
     }
   }
 }

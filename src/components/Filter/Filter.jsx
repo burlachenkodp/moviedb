@@ -1,21 +1,23 @@
 import React from "react";
+import classes from "./Filter.module.scss";
+
 
 const SORT_PROP = [
-  { value: "any", label: "Any" },
+  { value: "any", label: "Sort" },
   { value: "vote_average", label: "Sort by mark" },
   { value: "title", label: "Sort by title" },
 ];
 
 const FILTER_PROP = [
-  { value: "empty", label: "language" },
-  { value: "en", label: "ENGLISH" },
-  { value: "ko", label: "KOREAN" },
-  { value: "es", label: "SPANISH" },
+  { value: "empty", label: "Country" },
+  { value: "en", label: "English" },
+  { value: "ko", label: "Korean" },
+  { value: "es", label: "Spanish" },
 ];
 
 export const Filter = ({ typeSort, setTypeSort, lang, setLang }) => {
   return (
-    <div>
+    <section className={classes["filter-container"]}>
       <select value={typeSort} onChange={(e) => setTypeSort(e.target.value)}>
         {SORT_PROP.map((item) => (
           <option value={item.value} key={item.value}>
@@ -31,6 +33,6 @@ export const Filter = ({ typeSort, setTypeSort, lang, setLang }) => {
           </option>
         ))}
       </select>
-    </div>
+    </section>
   );
 };

@@ -1,0 +1,14 @@
+.filter-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+min-width: 300px;
+  select {
+    min-width: 120px;
+
+    padding:10px;
+    border-radius:4px;
+    margin: 10px 0;
+  }
+
+}

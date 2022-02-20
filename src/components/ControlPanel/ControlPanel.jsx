@@ -1,7 +1,7 @@
 import React from "react";
 import { Filter } from "../Filter/Filter";
 import { Search } from "../SearchBar/Search";
-import classes from "./ControlPanel.module.css";
+import classes from "./ControlPanel.module.scss";
 
 
 export const ControlPanel = ({

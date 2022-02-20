@@ -1,8 +1,10 @@
 import React from "react";
 import classes from "./MoviesHeader.module.scss";
 import { Menu } from "../Menu/Menu";
+
 import { OPEN_FORM } from "../../utils/constanst";
 import logo from "../../beetroot.svg";
+
 
 export const MoviesHeader = ({ setShowModal }) => {
   const showDlg = () => {
@@ -11,14 +13,15 @@ export const MoviesHeader = ({ setShowModal }) => {
   return (
     <header className={classes["header"]}>
       <div className={classes["header__container"]}>
-        <div>
+        <div className={classes["header__logo"]}>
           <a href="https://beetroot.academy/">
             <img src={logo} width="100" height="50" alt="Logo loading" />
           </a>
         </div>
-        <Menu></Menu>
+       <div className={classes["header__nav"]}><Menu></Menu>
+       </div> 
         
-          <button onClick={showDlg}>LOGIN</button>
+          <button onClick={showDlg} className={classes["header__button"]}>Login</button>
         
       </div>
     </header>

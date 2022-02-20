@@ -9,9 +9,9 @@ export const Modal = ({ movies, show, close }) => {
   }
 
   return (
-    <div className={styleModal.join(" ")} onClick={close}>
+    <div className={styleModal.join(" ")} onClick={close} >
       <div onClick={(e) => e.stopPropagation()}>
-        <UserForm movies={movies} />
+        <UserForm movies={movies}  close={close}/>
       </div>
     </div>
   );
