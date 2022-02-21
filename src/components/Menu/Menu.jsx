@@ -12,7 +12,6 @@ const MENU_ITEMS = [
 export const Menu = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-  const getClass = hamburgerOpen === true ? "SHOWMENU" : "HIDEMENU";
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen);
