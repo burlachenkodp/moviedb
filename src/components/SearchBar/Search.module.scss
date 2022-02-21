@@ -1,8 +1,8 @@
 .search-block {
   @media (max-width: 375px) {
-   padding-top: 10px;
+    padding-top: 10px;
   }
-  .search-text {
+  &__input {
     padding: 10px;
     background-color: #77a6f7;
     border-radius: 4px 0px 0px 4px;
@@ -10,12 +10,11 @@
     min-width: 240px;
     @media (max-width: 375px) {
       border-radius: 4px;
-
       width: 100%;
     }
   }
 
-  button {
+  &__button {
     order: 3;
     color: white;
     padding: 10px 20px;

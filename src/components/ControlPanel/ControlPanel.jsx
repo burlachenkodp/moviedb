@@ -14,6 +14,7 @@ export const ControlPanel = ({
   setLang,
 }) => {
   return (
+    <div className="container">
     <section className={classes["control-panel-container"]}>
       <Search
         handleOnSubmit={handleOnSubmit}
@@ -27,6 +28,7 @@ export const ControlPanel = ({
         setLang={setLang}
       ></Filter>
     </section>
+    </div>
   );
 };
 

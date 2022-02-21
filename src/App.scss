@@ -7,6 +7,8 @@
   border: none;
   outline: none;
   font-weight: 400;
+  font-family: "Roboto", sans-serif;
+
 }
 body {
   overflow-y: scroll;
@@ -14,6 +16,7 @@ body {
 }
 button {
   cursor: pointer;
+  font-family: "Roboto", sans-serif;
 
 }
 .App {
@@ -24,14 +27,19 @@ button {
 header {
   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
   flex: 0 0 auto;
+  min-width: 320px;
 }
 main {
   /* 1 flex-grow, 0 flex-shrink, auto flex-basis */
   flex: 1 0 auto;
+  min-width: 320px;
+
 }
 footer {
   /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
   flex: 0 0 auto;
+  min-width: 320px;
+
 }
 .container {
   max-width: 1140px;

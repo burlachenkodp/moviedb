@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 import { ROUTE_BLOG, ROUTE_MAIN } from "../../utils/constanst";
-import classes from "./Menu.module.scss";
 import Hamburger from "../Hamburger/Hamburger";
 
 const MENU_ITEMS = [
@@ -21,14 +20,13 @@ export const Menu = () => {
   return (
     <div>
       <div className="navigation">
-        <ul className={getClass}>
+        <ul >
           {MENU_ITEMS.map((item) => (
             <li key={item.path}>
               <NavLink
                 to={item.path}
                 className={(isActive) =>
-                  !isActive ? 
-                  "active-link" : "usual-link"
+                  !isActive ? "active-link" : "usual-link"
                 }
               >
                 {item.label}
@@ -59,10 +57,11 @@ export const Menu = () => {
         .navigation a {
           text-decoration: none;
           display: inline-block;
-          color: #000;
+          color:#354ebf;
           padding: 10px 20px;
           margin: 10px 10px;
           border-radius: 4px;
+          font-weight: 700;
 
         
         }
@@ -112,11 +111,12 @@ export const Menu = () => {
               border-bottom: 3px solid #071347;
             }
         
-        @media (max-width: 320px) {
+        @media (max-width: 500px) {
           .navigation ul {
             
             height: 100vh;
             width: 100vw;
+            min-width: 320px;
             margin-top: 66px;
             position: fixed;
           }

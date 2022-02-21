@@ -9,11 +9,11 @@ export const Search = ({ handleOnSubmit, handleOnChange, searchText }) => {
       <input
         type="search"
         placeholed="search"
-        className={classes["search-text"]}
+        className={classes["search-block__input"]}
         value={searchText}
         onChange={handleOnChange}
       />
-      <button>SEARCH</button>
+      <button className={classes["search-block__button"]}>SEARCH</button>
     </form>
   </section>
   );

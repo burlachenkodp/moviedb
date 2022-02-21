@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./Filter.module.scss";
 
-
 const SORT_PROP = [
   { value: "any", label: "Sort" },
   { value: "vote_average", label: "Sort by mark" },
   { value: "title", label: "Sort by title" },
+  { value: "release_date", label: "Sort by year" },
 ];
 
 const FILTER_PROP = [

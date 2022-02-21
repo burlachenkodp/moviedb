@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Movie } from "../MovieItem/Movie";
 import { sortList } from "../../utils/helpers";
 import { ControlPanel } from "../ControlPanel/ControlPanel";
@@ -41,7 +41,7 @@ export const MovieList = ({
 
 
   return (
-    <main>
+    <main className={classes["movielist"]}>
       <ControlPanel
         handleOnSubmit={handleOnSubmit}
         handleOnChange={handleOnChange}
@@ -52,8 +52,8 @@ export const MovieList = ({
         setLang={setLang}
       ></ControlPanel>
 
-      <section className={classes["main-container"]}>
-        <section className={classes["movie-container"]}>
+      <section className={"container"}>
+        <section className={classes["movielist__container"]}>
           {" "}
           {MoviesArray?.length ? (
             MoviesArray.map((movie) => (
@@ -64,13 +64,13 @@ export const MovieList = ({
               ></Movie>
             ))
           ) : (
-           <div><h1>Go to the next page</h1></div> 
+           <div className={classes["movielist__empty"]}><h1>Go to the next page</h1></div> 
           )}
         </section>
-        <div className={classes["pagination"]}>
+        <div className={classes["movielist__pagination"]}>
           <div>
             {" "}
-            <button onClick={() => setPage(prevPage)}  disabled ={(page === 1)}>PREV</button>
+            <button onClick={() => setPage(prevPage)}  disabled ={(page === 1)} >PREV</button>
           </div>
           <div>
             <span>{page}</span>

@@ -5,6 +5,7 @@
   width: 100%;
   position: fixed;
   top: 0; 
+  font-weight: 700;
 
  
   z-index: 1000;
@@ -27,13 +28,16 @@
       padding: 0;
     }
   }
+
+  
   &__button {
     order: 5;
-    color: #000;
+    color: #354ebf;
     padding: 10px 20px;
     margin: 10px 0px 10px 10px;
     border-radius: 4px;
     background-color: #fff;
+    font-weight: 700;
     @media (max-width: 767px) {
       margin: 10px }
 

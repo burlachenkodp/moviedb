@@ -1,25 +1,21 @@
-main {
+.movielist {
   background-color: #d3e3fc;
   padding-top: 82px;
 
-  .main-container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  .movie-container {
+  &__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     @media (max-width: 1040px) {
-      justify-content: center;  
-         }
+      justify-content: center;
+    }
   }
-  .pagination {
+  &__pagination {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex: 0 0 auto;
     span {
       font-size: 28px;
       font-weight: 700;
@@ -28,7 +24,6 @@ main {
     button {
       min-width: 100px;
       padding: 8px;
-      
       border-radius: 4px;
       background-color: #354ebf;
       color: white;
@@ -45,6 +40,24 @@ main {
       &:disabled {
         background-color: #c9cee4;
       }
+    }
+  }
+
+  &__empty {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 350px;
+  flex: 1 0 auto;
+  
+  
+    text-align: center;
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
     }
   
   }

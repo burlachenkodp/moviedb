@@ -17,12 +17,9 @@ export const MovieCard = () => {
       .then((json) => {
         let temp = json;
         setUserInfo(temp);
-        console.log(temp);
       });
   }, [id]);
-  console.log(userInfo);
   const next = Number(id) + 1;
-  console.log(next);
 
   return (
     <main className={classes["container"]}>
