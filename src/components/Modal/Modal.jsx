@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Modal.module.css";
+import classes from "./Modal.module.scss";
 import { UserForm } from "../UserForm/UserForm";
 
 export const Modal = ({ movies, show, close }) => {

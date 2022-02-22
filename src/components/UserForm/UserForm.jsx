@@ -21,11 +21,7 @@ export const UserForm = ({ createUser, roles: ROLE_USER = [], close }) => {
     setDisabled(!(name.length > 3 && age.length > 0));
   }, [name, age]);
 
-  const handleData = (e) => {
-    e.preventDefault();
-    const newUser = { name: name, age: age, id: Date.now() };
-    createUser(newUser);
-  };
+
 
   return (
     <div className="form-holder">
@@ -38,7 +34,7 @@ export const UserForm = ({ createUser, roles: ROLE_USER = [], close }) => {
           <span onClick={close} > <ImCross size={20} /></span>
         </div>
       </div>
-      <form className="user-form" name="user-create" onSubmit={handleData}>
+      <form className="user-form" name="user-create" onSubmit={close}>
         <div className="user-form__input-holder">
           <label>Username</label>
           <input value={name} onChange={getName} className="user-form__input"/>
@@ -49,7 +45,7 @@ export const UserForm = ({ createUser, roles: ROLE_USER = [], close }) => {
           <input value={age} onChange={changeAge} type="password" className="user-form__input"/>
         </div>
         <div className="user-form__button-holder">
-          <button disabled={isDisabled} className="user-form__button">LOGIN</button>
+          <button disabled={isDisabled}  className="user-form__button">LOGIN</button>
         </div>
       </form>
     </div>
